@@ -1,5 +1,4 @@
-local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Orion/main/source"))()
-
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({
 	Name = "Script Hub",
 	HidePremium = false,
@@ -32,3 +31,20 @@ MainTab:AddButton({
 })
 
 OrionLib:Init()
+MainTab:AddButton({
+	Name = "Join Discord to get the latest scripts.",
+	Callback = function()
+		if setclipboard then
+			setclipboard("https://discord.gg/5uVYwg8qe")
+		elseif toclipboard then
+			toclipboard("https://discord.gg/5uVYwg8qe")
+		end
+
+		OrionLib:MakeNotification({
+			Name = "Thành công",
+			Content = "Đã copy link Discord vào clipboard!",
+			Image = "rbxassetid://4483345998",
+			Time = 3
+		})
+	end
+})
