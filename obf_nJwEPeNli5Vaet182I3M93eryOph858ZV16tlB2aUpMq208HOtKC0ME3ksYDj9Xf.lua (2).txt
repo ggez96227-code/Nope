@@ -1,4 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
+
 local Window = OrionLib:MakeWindow({
 	Name = "Script Hub",
 	HidePremium = false,
@@ -6,16 +7,16 @@ local Window = OrionLib:MakeWindow({
 	ConfigFolder = "ScriptHub"
 })
 
-local MainTab = Window:MakeTab({
+local Tab = Window:MakeTab({
 	Name = "Main",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
-MainTab:AddLabel("Script Fix Wait")
+Tab:AddLabel("Script Fix Wait")
 
 -- Ví dụ nút Fix Wait
-MainTab:AddButton({
+Tab:AddButton({
 	Name = "Script delete Once the fix is complete, you will have a clipboard to copy from.",
 	Callback = function()
 		local oldWait = wait
@@ -31,7 +32,7 @@ MainTab:AddButton({
 })
 
 OrionLib:Init()
-MainTab:AddButton({
+Tab:AddButton({
 	Name = "Join Discord to get the latest scripts.",
 	Callback = function()
 		if setclipboard then
